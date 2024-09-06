@@ -1,4 +1,4 @@
-package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp;
+package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Controller;
 
 import java.net.URI;
 import java.util.List;
@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Entity.Course;
+import dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Service.CourseService;
 
 @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:4200"})
 @RestController

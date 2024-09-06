@@ -68,7 +68,7 @@ class CourseComponent extends Component {
         if (this.state.id == -1) {
             CourseService.addCourse(username, course).then(
                 () => this.props.navigate('/courses'));
-                    }
+        }
 
         else {
             CourseService.updateCourse(username, this.state.id, course).then
@@ -76,49 +76,49 @@ class CourseComponent extends Component {
         }
 
         console.log("form data : ", values);
-}
+    }
 
-render() {
+    render() {
 
-    // DESCTRUCTING. BREAKING DOWN COMPLEX DATA STRUCTURE INTO SMALLER VARIABLES
-    // let arr = [ "ninja" , "tokyo"]; // let [firstword, secondword] = arr; 
-    // also written as - let id = this.state.id // let description = this.state.description;
+        // DESCTRUCTING. BREAKING DOWN COMPLEX DATA STRUCTURE INTO SMALLER VARIABLES
+        // let arr = [ "ninja" , "tokyo"]; // let [firstword, secondword] = arr; 
+        // also written as - let id = this.state.id // let description = this.state.description;
 
-    let { id, username } = this.state;
+        let { id, username } = this.state;
 
-    return (
+        return (
 
-        <div>
-            <h3>Course Details</h3>
-            <div className='container'>
-                <Formik initialValues={{ id, username }}
-                    onSubmit={this.onSubmit}
-                    enableReinitialize={true}
-                    validate={this.validate}
-                    validateOnBlur={false}
-                    validateOnChange={false}
-                >
-                    {
-                        (props) => (
-                            <Form>
-                                <ErrorMessage name="username" component="div" className="alert alert-warning" />
-                                <fieldset className="form-group">
-                                    <label>ID</label>
-                                    <Field className="form-control" name="id" type="text" />
-                                </fieldset>
-                                <fieldset className="form-group">
-                                    <label>Description</label>
-                                    <Field className="form-control" name="username" type="text" />
-                                </fieldset>
-                                <button className="btn btn-success" onClick={this.onSubmit} type="submit"> Save </button>
-                            </Form>
-                        )
-                    }
+            <div>
+                <h3>Course Details</h3>
+                <div className='container'>
+                    <Formik initialValues={{ id, username }}
+                        onSubmit={this.onSubmit}
+                        enableReinitialize={true}
+                        validate={this.validate}
+                        validateOnBlur={false}
+                        validateOnChange={false}
+                    >
+                        {
+                            (props) => (
+                                <Form>
+                                    <ErrorMessage name="username" component="div" className="alert alert-warning" />
+                                    <fieldset className="form-group">
+                                        <label>ID</label>
+                                        <Field className="form-control" name="id" type="text" />
+                                    </fieldset>
+                                    <fieldset className="form-group">
+                                        <label>Description</label>
+                                        <Field className="form-control" name="username" type="text" />
+                                    </fieldset>
+                                    <button className="btn btn-success" onClick={this.onSubmit} type="submit"> Save </button>
+                                </Form>
+                            )
+                        }
 
-                </Formik>
+                    </Formik>
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 }
 export default withRouter(CourseComponent);

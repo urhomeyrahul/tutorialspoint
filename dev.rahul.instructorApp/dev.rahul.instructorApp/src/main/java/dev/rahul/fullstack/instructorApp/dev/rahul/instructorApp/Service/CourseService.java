@@ -1,4 +1,4 @@
-package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp;
+package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,8 @@ import java.util.Optional;
 import java.util.Iterator;
 
 import org.springframework.stereotype.Service;
+
+import dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Entity.Course;
 
 @Service
 public class CourseService {

@@ -1,4 +1,4 @@
-package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Controller;
+package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.controller;
 
 import java.net.URI;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Entity.Course;
-import dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Service.CourseService;
+import dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.entity.Course;
+import dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.service.CourseService;
 
 @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:4200"})
 @RestController
@@ -26,9 +26,9 @@ public class CourseController{
 	
 	@Autowired
 	public CourseService courseService;
-	
+
 	//DISPLAYING ALL COURSES
-	
+
 	@GetMapping("/instructors/{username}/courses")
 	public List<Course> getAllCourses(@PathVariable String username){
 		return courseService.findAll();

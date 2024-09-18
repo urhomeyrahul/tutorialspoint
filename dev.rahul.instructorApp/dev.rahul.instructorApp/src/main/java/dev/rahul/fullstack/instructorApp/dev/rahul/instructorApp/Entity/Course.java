@@ -1,4 +1,4 @@
-package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.Entity;
+package dev.rahul.fullstack.instructorApp.dev.rahul.instructorApp.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -43,11 +43,11 @@ public class Course{
 		this.username = username;
 	}
 
-	public Course(Long id,String description, String username) {
-		super();
-		this.id = id;
-		this.description = description;
-		this.username = username;
+	public Course() {
+//		super();
+//		this.id = id;
+//		this.description = description;
+//		this.username = userName;
 	}
 	
 	@Override
